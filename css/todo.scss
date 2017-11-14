@@ -1,0 +1,392 @@
+*{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	width:100%;
+	height: 100%;
+  background: #E5E3DC;
+  font-family: "微软雅黑";
+}
+@font-face{
+  font-family: "icon2";
+  src:url('../fonts/c2/iconfont.woff')format('woff'); 
+}
+.icuser:before { content: "\e601";  }
+.icmenu:before { content: "\e62b"; }
+.icphone:before { content: "\e615"; }
+.icplus:before { content: "\e610"; }
+.icyanzheng:before { content: "\e60c"; }
+
+
+.todo{
+	width: 414px;
+	height: 100%;
+   margin: 0 auto;
+   font-family:'Open Sans', 'sans-serif';
+   
+	h1{
+     padding-top: 20px;
+      display: block;
+      background: black;
+      height: 40px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 40px;
+      font-size: 30px;
+      color: white;
+      box-shadow: 0  5px 25px 0 black;
+      margin-bottom: 15px;
+      .title{
+          font-weight: 300;
+          display: block;
+          float: left;
+          margin-left: 20px;
+
+      }
+      .shijian{
+        line-height: 50px;
+         font-size: 16px;
+         float: right;
+         display: block;
+         font-weight: 300;
+         margin-right: 15px;
+      }
+      }
+      .card{
+      	width: 100%;
+      	.header{
+      		position: relative;
+      		width: 100%;
+      		height: auto;
+          margin-bottom: 10px;
+           &::before{
+           	content:"";
+           	display: block;
+           	width: 40px;
+           	height: 40px;
+           	position: absolute;
+           	left: 0;
+           	top: 0;
+           }
+            .btn_add_fin {
+            z-index: 5;
+            height: 30px;
+            width: 60px;
+            border-radius: 4px;
+            font-weight: 700px;
+            outline: none;
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #F9263E;
+            border: none;
+            box-shadow: 1px 5px 10px -5px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            cursor: pointer;
+            
+           };
+           input{
+            width: 93%;
+            padding: 10px 2%;
+            background-color: #fff;
+            border: none;
+            box-shadow: 1px 5px 10px -5px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            outline: none;
+           	width: 100%;
+           	height: 40px;
+           	box-sizing:border-box;
+           	outline: none;
+           	padding-left: 40px;
+           }
+      	}
+      }
+	
+}
+.todo .card .todos{
+  overflow-y:scoll;
+	width: 100%;
+  position: relative;
+	.heng{
+    &:hover{
+    box-shadow: 0 0 3px 0px #F9263E inset;
+    }
+    position: relative;
+    float: left;
+    width: 100%;
+    left: 0;
+    background-color: #F1F1EF;
+    list-style: none;
+    box-shadow: 1px 10px 20px 0px rgba(218, 215, 206, 0.8);
+    z-index: 2;
+    transition: all 0.5s;
+		position: relative;
+    height: 40px;
+    margin-bottom: 1px;
+       .check{
+        font-family: "icon2";
+       	width: 40px;
+       	height: 40px;
+       	float: left;
+        font-size: 20px;
+        color:#45625F; 
+        position: relative;
+        line-height: 40px;
+        text-align: center;
+        border-left: 4px solid #F9263E;
+        &::before{
+        transition: all 0.6s ease;        
+        display: block;
+        content: "\e610";
+        transform: rotateZ(0deg);
+       };
+       }
+       p{
+        display:block;
+        height: 40px;
+        line-height: 40px;
+        white-space: nowrap;
+        color: black;
+        font-size: 14px;
+        padding-left: 50px;
+        box-sizing:border-box;
+       }
+       .delete{
+       &:hover .top {
+                animation: delete 0.8s ease-out infinite;
+      }
+      &.active {
+          button{
+            .top{
+              background: #8B08ED;
+              &:before{
+                background: #8B08ED;
+              }
+            }
+            .bottom{
+              background: #8B08ED;
+  
+            }
+          }      
+      }
+       	width: 20px;
+       	height: 20px;
+       	position: absolute;
+       	right: 10px;
+       	top: 0;
+       	bottom: 0;
+       	margin: auto;
+           button {
+          transform:scale(0.5); 
+    position: relative;
+    display: block;
+    width: 25%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 99;
+    outline: none;
+    backface-visibility: hidden;
+              .top {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: -2px;
+              margin: auto;
+              top: -31px;
+              width: 30px;
+              height: 4px;
+              background: red;
+              z-index: 1;
+              &:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+              top: -2px;
+              width: 18px;
+              height: 6px;
+              background: red;
+              border-radius: 8px;
+          }
+          }
+          .bottom {
+              top: 8px;
+              width: 26px;
+              height: 30px;
+              background: #F9263E;
+              border-radius: 0 0 6px 6px;
+          }
+          & > div {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+          }
+          }
+       }
+       input{
+       	display: none;
+       	height: 40px;
+       	width: 100%;
+       	padding-left: 40px;
+       	position: absolute;
+       	left: 0;
+       	top: 0;
+       }
+	}
+}
+.todo .card .todos .heng.wancheng{
+	   .check{
+	      border-left: 4px solid #8B08ED;
+        &::before{
+        transition: all 0.6s ease;        
+        display: block;
+        content: "\e610";
+        transform: rotateZ(405deg);
+        color: red;
+        font-weight: 700;
+       };
+	   }
+	   p{
+	   	text-decoration: line-through;
+	   	color: #ccc;
+	   }
+
+}
+.todo .card .todos .heng.shuangji{
+	   .check{
+	   display: none;
+	   }
+	   p{
+	   	display: none;
+	   }
+	   .delete{
+	   	display: none;
+	   }
+	   input{
+	   	display: block;
+	   }
+
+}
+.da{
+	width: 400px;
+	height: 300px;
+	background: pink;
+	.jia{
+		font-size: 50px;
+	}
+	.xiao{
+		width: 30px;
+		height: 30px;
+		background: #66D9D0;
+		float: left;
+		margin:5px;
+	}
+}
+.todo .card .todos{
+    .heng{
+      overflow: hidden;
+      transition:all 0.8s ease;
+  }
+    .heng.ng-enter{
+    opacity: 0;
+    margin-top: 20px;
+  }
+    .heng.ng-enter-active{
+     margin: 0px;
+     opacity: 1;
+    
+  }
+   .heng.ng-leave{
+     opacity: 1;
+     margin-bottom: 20px;
+     /*height: 40px;*/
+  }
+    .heng.ng-leave-active{  
+      margin: 0px;
+      opacity: 0;
+      height: 0;
+    
+  }
+}
+.card .footer{
+  height: auto;
+  width: 96%;
+  margin: 0 2%;
+  font-family: "微软雅黑";
+  span{
+    width: 18%;
+    display: block;
+    line-height: 14px;
+    font-weight: 500;
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    margin:5px 2% 5px 0px; 
+    text-shadow:0 0 2px #fff;
+    color: #5D5A55;
+    cursor:pointer;
+    &:nth-child(4){
+      font-size:13px;
+      color:#F9263E;
+      font-weight: 600;
+    };
+     &:nth-child(5):hover{
+      color:#476F99;
+      font-weight: 600;
+    };
+  }
+  .red{
+    transform:scale(1.2);
+    color: #F9263E; 
+  }
+}
+
+
+
+
+
+
+
+
+@keyframes delete {
+  0% {
+     transform: rotate(0) translateY(0);
+  }
+  20% {
+        transform: rotate(0) translateY(-4px);
+  }
+  30% {
+            transform: rotate(20deg) translateY(-4px);
+  }
+  40% {
+             transform: rotate(-20deg) translateY(-4px);
+  }
+  50% {
+            transform: rotate(20deg) translateY(-4px);
+  }
+  60% {
+             transform: rotate(-10deg) translateY(-4px);
+  }
+  70% {
+            transform: rotate(10deg) translateY(-4px);
+  }
+  80% {
+        transform: rotate(0) translateY(-4px);
+  }
+  100% {
+     transform: rotate(0) translateY(0);
+  }
+}

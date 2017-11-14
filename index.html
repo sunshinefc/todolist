@@ -1,0 +1,62 @@
+
+<html lang="en" ng-app = "todos">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>todos</title>
+	<link rel="stylesheet" href="css/todo.css">
+	<script src='angularjs/jquery.js'></script>
+	<script src='angularjs/angular.js'></script>
+	<script src='angularjs/angular-animate.js'></script>
+
+	<script src='js/main.js'></script>
+	
+	
+</head>
+<body ng-controller = 'mainCtrl'>
+	<!-- <span ng-click = "cc()">{{title}}</span>
+	<div ng-repeat = "v in list">
+		<span>{{v.a}}</span>
+		<span>{{v.b}}</span>
+		<span>{{v.c}}</span>
+		<span ng-click="del($index)">+</span>
+		
+	</div> -->
+
+  <div class="todo">
+		<h1> <span class="title">TODOS</span><span class="shijian" ng-bind="title"></span></h1>
+		<div class="card" ng-init="tiaojian=''">
+			<div class="header">
+				<!-- <button class="btn_add_fin" ng-click="add($event);save()">ADD</button> -->
+				 <div class="footer">
+			 		
+			 	<span  ng-click="tiaojian=''" ng-class="{red:(tiaojian ==='') }">全部</span>
+			 	<span   ng-click="tiaojian='true'" ng-class="{red:(tiaojian ==='true') }">已完成</span>
+			 	<span  ng-click="tiaojian='false'" ng-class="{red:(tiaojian ==='false') }">未完成</span>
+			 	<span ng-bind="(todos| filter:{isDone:tiaojian}).length"></span>
+			    <span ng-click="clear();save()">清除已完成</span>
+			 </div>
+				<input type="text" ng-keydown="add($event);save()"  ng-model="name"  placeholder="请输入内容">
+			</div>
+			<ul class="todos">
+				<li  ng-class='{wancheng : v.isDone,shuangji:aa}'  ng-dblclick="aa=true;focus($event)"  ng-init='aa=false' class="heng " ng-repeat="v in todos | filter:{isDone:tiaojian}  track by v.id">
+					<div class="check .icplus"  ng-init="de=false"  ng-click="v.isDone = !v.isDone ; save()">  </div>
+					<p>{{v.name}}</p>
+					<input ng-blur="aa=false" ng-model="v.name" ng-change="save()" type="text">
+					<div class="delete"  ng-click="del(v.id);save()" ng-class="{active:v.isDone}">
+						
+                           <button class="delete">
+						    <div class="top"></div>
+						    <div class="bottom"></div>
+						  </button>
+
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+
+	
+</body>
+</html>
